@@ -1,0 +1,15 @@
+{% extends 'basic_app/basic_base.html' %}
+{% block body_block %}
+{% if not form.instance.pk %}
+  Create school
+{% else %}
+  Update school
+{% endif %}
+<div class=Jumbotron>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='create'>
+  </form>
+</div>
+{% endblock %}
